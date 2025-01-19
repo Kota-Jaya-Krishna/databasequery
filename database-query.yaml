@@ -1,6 +1,5 @@
 - name: database execution query
   hosts: db
-  become: yes
   tasks: 
   - name: install MYSQL libraries
     ansible.builtin.pip:
