@@ -13,4 +13,4 @@
   - name: import mysql data
     community.mysql.mysql_query:
       login_db: transactions
-      query: insert into transactions (id,amount,description) values (1002,50,'lunch')
+      query: insert into transactions (id,amount,description) values (1003,500,'dinner')
