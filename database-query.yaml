@@ -1,5 +1,8 @@
 - name: database execution query
   hosts: db
+  become: yes
+  vars:
+    mysql_root_password: ExpenseApp@1
   tasks: 
   - name: install MYSQL libraries
     ansible.builtin.pip:
@@ -12,4 +15,6 @@
   - name: import mysql data
     community.mysql.mysql_query:
       login_db: transactions
-      query: insert into transactions (id,amount,description) values (1005,500,'tea')
+      login_user: root
+      login_password: "{{ mysql_root_password }}"
+      query: insert into transactions (id,amount,description) values (1008,500,'tea')
