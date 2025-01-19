@@ -21,4 +21,4 @@
           Query Results:
           
           {{ query_result.stdout | regex_replace('\t', '  ') }}
-        dest: /tmp/query_results.txt
+    dest: /tmp/query_results.txt
