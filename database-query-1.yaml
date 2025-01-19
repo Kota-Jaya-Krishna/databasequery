@@ -11,10 +11,10 @@
     - PyMySQL
 
   - name: Execute SQL query
-    shell: >
-        mysql --defaults-extra-file=/root/.my.cnf -e "use transactions; SELECT * FROM transactions;"
+    ansible.builtin.shell:
+      mysql --defaults-extra-file=/root/.my.cnf -e "use transactions; SELECT * FROM transactions;"
     register: query_result
 
   - name: Display the query result
-    debug:
-      var: query_result.stdout
+    ansible.builtin.debug:
+      msg: "Query results: {{ query_result.stdout }}"
