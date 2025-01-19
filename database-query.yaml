@@ -2,7 +2,7 @@
   hosts: db
   become: yes
   vars:
-    mysql_root_password: ExpenseApp@1
+    mysql_root_password: ExpenseApp@13
   tasks: 
   - name: install MYSQL libraries
     ansible.builtin.pip:
