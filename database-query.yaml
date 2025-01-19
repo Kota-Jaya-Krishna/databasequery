@@ -9,7 +9,7 @@
     loop:
     - cryptography
     - PyMySQL
-    
+
   - name: import mysql data
     community.mysql.mysql_query:
       login_db: mysql
@@ -17,3 +17,8 @@
       login_user: root
       login_password: ExpenseApp@1
       query: select Host,User from user
+    register: results_info
+
+  - name: print the results
+    ansible.builtin.debug:
+      msg: "query results : {{ results_info }}"
