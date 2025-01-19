@@ -16,9 +16,4 @@
       login_host: mysql.learndevopsacademy.online
       login_user: root
       login_password: ExpenseApp@1
-      query: select Host,User from user
-    register: results_info
-
-  - name: print the results
-    ansible.builtin.debug:
-      msg: "query results : {{ results_info }}"
+      query: insert into transactions (id,amount,description) values (1002,50,'lunch')
