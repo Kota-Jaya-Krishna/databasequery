@@ -12,9 +12,9 @@
 
   - name: Execute SQL query
     shell: >
-        mysql --defaults-extra-file=/root/.my.conf -e "use transactions; SELECT * FROM transactions;"
+        mysql --defaults-extra-file=/root/.my.cnf -e "use transactions; SELECT * FROM transactions;"
     register: query_result
 
   - name: Display the query result
-    ansible.builtin.debug:
-      msg: "query results from database: {{ query_result.stdout }}"
+    debug:
+      var: query_result.stdout
