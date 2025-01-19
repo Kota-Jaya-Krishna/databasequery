@@ -16,7 +16,7 @@
     register: query_result
 
   - name: Format query result
-    copy:
+    ansible.builtin.copy:
       content: |
           Query Results:
           
