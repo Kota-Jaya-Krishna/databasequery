@@ -12,7 +12,7 @@
 
   - name: import mysql data
     community.mysql.mysql_query:
-      login_db: mysql
+      login_db: transactions
       login_host: mysql.learndevopsacademy.online
       login_user: root
       login_password: ExpenseApp@1
