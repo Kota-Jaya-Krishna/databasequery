@@ -1,0 +1,20 @@
+- name: Execute a database query using MySQL client
+  hosts: db
+  become: true  # If the user requires elevated privileges
+  tasks:
+  - name: install MYSQL libraries
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      executable: pip3.9
+    loop:
+    - cryptography
+    - PyMySQL
+
+  - name: Execute SQL query
+    shell: >
+        mysql --defaults-extra-file=/root/.my.cnf -e "use transactions; SELECT * FROM transactions;"
+    register: query_result
+
+  - name: Display the query result
+    ansible.builtin.debug:
+      msg: "query results from database: {{ query_result.stdout }}"
