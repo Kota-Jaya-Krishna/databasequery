@@ -18,3 +18,11 @@
   - name: Display the query result
     ansible.builtin.debug:
       msg: "Query results: {{ query_result.stdout }}"
+
+
+  #To connect to a database and execute a query without directly including user credentials in the YAML file, 
+  #you can use Ansible Vault or a pre-configured .my.cnf file on the target servers. Here's how you can achieve it:
+  #steps:
+  #Deploy .my.cnf on target servers as described earlier. 
+  #This file contains database credentials securely stored with restricted permissions (chmod 600).
+

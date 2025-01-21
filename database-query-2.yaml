@@ -11,7 +11,7 @@
     - PyMySQL
 
   - name: Execute SQL query
-    shell: >
+    ansible.builtin.shell:
         mysql --defaults-extra-file=/root/.my.cnf -e "use transactions; SELECT * FROM transactions;"
     register: query_result
 
